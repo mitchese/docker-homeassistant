@@ -65,13 +65,13 @@ docker run -d --name="home-assistant" \
   --net=host mitchese/docker-homeassistant
 ```
 
-If you don't require host networking (for example, if you're not doing any traffic sniffing for presence detection, HUE Bridge emulation, etc.) then you can skip `--net=host` and replace with `--port 5000:5000`
+If you don't require host networking (for example, if you're not doing any traffic sniffing for presence detection, HUE Bridge emulation, etc.) then you can skip `--net=host` and replace with `-p 8123:8123`
 
 ```bash
 docker run -d --name="home-assistant" \
   --volume /your-config-path:/config \
   --volume /etc/localtime:/etc/localtime:ro \
-  --port 5000:5000 mitchese/docker-homeassistant
+  -p 8123:8123 mitchese/docker-homeassistant
 ```
 
 ## Persistence
